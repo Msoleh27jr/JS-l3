@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f5be54af-9d3e-461d-8d7e-8f4f50874fd2)![js](https://www.tutorialrepublic.com/lib/images/javascript-illustration.png)
+![js](https://www.tutorialrepublic.com/lib/images/javascript-illustration.png)
 # JavaScrict
 ## 1 **Recursion** <br>
 ## 2 **CLosure** <br>
