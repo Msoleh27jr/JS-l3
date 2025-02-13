@@ -1,73 +1,95 @@
-![js](https://www.tutorialrepublic.com/lib/images/javascript-illustration.png)
+![image](https://github.com/user-attachments/assets/f5be54af-9d3e-461d-8d7e-8f4f50874fd2)![js](https://www.tutorialrepublic.com/lib/images/javascript-illustration.png)
 # JavaScrict
-## 1 **Conditions** <br>
-## 2 **Loops** <br>
-## 3 **Functions** <br>
+## 1 **Recursion** <br>
+## 2 **CLosure** <br>
 <br>
 <br>
 
-![Con](https://i.sstatic.net/cTfs4.jpg)
+![Con](https://miro.medium.com/v2/resize:fit:1123/1*jkItJfBy_QzcmwuSanzVuQ.png)
 <details>
-   <summary>Conditions</summary>
+   <summary>Recursion</summary>
 
-  ![condition](https://miro.medium.com/v2/resize:fit:1400/1*YgEZk4j_hmZOZEpIW6c2_Q.png)
-## Condition if - else
+![rec](https://blog.alexdevero.com/wp-content/uploads/2020/11/22-11-20-introduction-to-recursion-in-javascript-how-it-works-and-how-to-use-it-blog.jpg)
+## Recursion
   <br>
   
-***The if-else statement is used to execute both the true part and the false part of a
-given condition. If the condition is true, the if block code is executed and if the
-condition is false, the else block code is executed.***
+***Recursion in programming is like a
+function that keeps calling itself. When a
+function does this, its called a
+recursively defined function.***
 
-![Ter](https://miro.medium.com/v2/resize:fit:1026/1*TYAk7DqYzZDRkcz7rG_PLA.png)
-## Condition Ternary Operator
-<br>
+***But there is a rule it has to follow: it must
+have a way to stop calling itslef,***
 
-***An alternative to the if/else statement, the ternary operator allows JavaScript
-developers to write concise conditional statements. It is written as “?:” and takes
-three operands; a logical condition, a value to return if true, and a value to return if
-false.***
+***or it will go on forever. This stopping rule
+is called the base case.***
 
-![switch](https://pimylifeup.com/wp-content/uploads/2022/06/JavaScript-switch-statements-Thumbnail-NoWM.png)
-## Condition Switch case
-<br>
+```javascript
+function factorial(n) {
+    if (n === 0) return 1; // Base case
+    return n * factorial(n - 1); // Recursive call
+}
 
-***The switch statement evaluates an expression, matching the expression's value
-against a series of case clauses, and executes statements after the first case clause
-with a matching value, until a break statement is encountered. The default clause of
-a switch statement will be jumped to if no case matches the expression's value***
+console.log(factorial(5)); // Output: 120
+```
 
+### And also do not forget about condition becous if you do not put <if> in that's time your code will do your function infinitive
+
+```javascrip
+
+function factorial(n) {
+    if (n === 0) return 1;  // <---- ✅
+        return n * factorial(n - 1);
+    }
+}
+
+console.log(factorial(5)); // Output: 120
+
+```
 </details>
 
 <br>
 
-![Loop](https://thehelpfultipper.com/wp-content/uploads/2023/01/4-Different-Types-Of-JavaScript-Loops-With-Examples.png)
+![closer](https://media2.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F16uvtgfsbbutez78sr98.png)
 <details>
-   <summary>Loop</summary>
+   <summary>Closer</summary>
 
-  ![For](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjAzknxumG5CCNWT9YLeBDD_rKgy_TH6K9Tw&s)
+![closer](https://allma.si/blog/wp-content/uploads/2020/10/what-are-closures.png)
 ## Loop for
   <br>
   
-***The for statement creates a loop that consists of three optional expressions, 
-enclosed in parentheses and separated by semicolons. It is followed by a statement 
-(usually a block statement) that is executed repeatedly within the loop.***
+***Closure is the combination of a function bundled together (enclosed) with references to its
+surrounding state (the lexical enviroment). In other words a closure gives you access to an
+outer functions scope from an inner function***
 
-![while](https://miro.medium.com/v2/resize:fit:1400/1*jQEiQDcdtLzq1bn3mbNWwg.png)
-## Loop while
-<br>
+***A closure is a function that remembers its outer variables and
+can access them. In some languages, this is not possible, or
+the function must be written in a special way to create a
+closure.***
 
-***The while statement creates a loop that executes a specified statement as long as
-the test condition evaluates to true. The condition is evaluated before executing the
-statement. The following while loop iterates as long as n is less than three.***
+```javascript
+It is righr calling Closer ✅
 
-![do-while](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ldbXOusP24qPZlYZU4nObdKBUn7yMR-UXA&s)
-## Loop do-while
-<br>
+function counter() {
+    let cnt = 0;
+    return function() {
+        cnt++;
+    };
+}
+let myCounter = counter();
+console.log(myCounter);
+```
 
-***The condition is evaluated after executing the
-statement, resulting in the specified statement
-executing at least once. In the following example,
-the do...while loop iterates at least once and
-reiterates until i is no longer less than 5.***
+### And also it has anothet way that it is not correct ❌
+
+```javascript
+
+function counter(num1) {
+    return function(num2) {
+   return num1 + num2
+    };
+}
+console.log(counter(10)(5))
+```
 
 </details>
